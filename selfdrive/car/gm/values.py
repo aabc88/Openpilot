@@ -14,12 +14,12 @@ class CarControllerParams:
   STEER_MAX = 300  # GM limit is 3Nm. Used by carcontroller to generate LKA output
   STEER_STEP = 3  # Active control frames per command (~33hz)
   INACTIVE_STEER_STEP = 10  # Inactive control frames per command (10hz)
-  STEER_DELTA_UP = 10  # Delta rates require review due to observed EPS weakness
-  STEER_DELTA_DOWN = 15
+  STEER_DELTA_UP = 8 #10 # Delta rates require review due to observed EPS weakness
+  STEER_DELTA_DOWN = 13 #15
   STEER_DRIVER_ALLOWANCE = 65
   STEER_DRIVER_MULTIPLIER = 4
   STEER_DRIVER_FACTOR = 100
-  NEAR_STOP_BRAKE_PHASE = 0.25  # m/s
+  NEAR_STOP_BRAKE_PHASE = 0.1 #0.25 # m/s
   SNG_INTERCEPTOR_GAS = 18. / 255.
   SNG_TIME = 30  # frames until the above is reached
 
@@ -238,7 +238,7 @@ class CAR(Platforms):
   )
   CHEVROLET_TRAX = GMPlatformConfig(
     [GMCarDocs("Chevrolet TRAX 2024")],
-    CarSpecs(mass=1365, wheelbase=2.7, steerRatio=16.4, centerToFrontRatio=0.4),
+    CarSpecs(mass=1365, wheelbase=2.7, steerRatio=16.1, centerToFrontRatio=0.4),
   )
 
 
